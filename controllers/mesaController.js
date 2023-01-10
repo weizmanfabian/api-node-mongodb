@@ -43,7 +43,7 @@ exports.save = (req, res) => {
       err
         ? { msg: "Error al insertar", success: false }
         : {
-            msg: "Perfect, Registro exitoso",
+            msg: "Perfect, Registro exitoso ok",
             result: data,
             success: true,
           }

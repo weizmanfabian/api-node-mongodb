@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  chanchito:
+    build: 
+      context: . #ruta actual donde se encuentra el archivo docker-compose-dev
+      dockerfile: Dockerfile.dev #indicamos el archivo dev
+    ports: 
+      - "5000:5000"
+    links: 
+      - monguito #nombre del container que queremos mapear que utilice el servicio de chanchito 
+  monguito: 
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=weizmanfabian
+      - MONGO_INITDB_ROOT_PASSWORD=password12345
